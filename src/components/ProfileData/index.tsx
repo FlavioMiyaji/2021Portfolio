@@ -4,8 +4,6 @@ import {
   Container,
   Flex,
   Avatar,
-  Row,
-  PeopleIcon,
   Column,
   CompanyIcon,
   LocationIcon,

@@ -1,9 +1,15 @@
-import React, { useCallback, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React from 'react';
 
 import { ThemeName } from '../../styles/themes';
 
-import { Container, GithubLogo, SearchForm } from './styles';
+import {
+  Container,
+  SmallProfile,
+  ChangeLanguageIcon,
+  ChangeLanguage,
+  Moon,
+  Sun,
+} from './styles';
 
 interface IProps {
   themeName: ThemeName;
@@ -11,26 +17,19 @@ interface IProps {
 }
 
 const Header: React.FC<IProps> = ({ themeName, setThemeName }) => {
-  const [search, setSearch] = useState('');
-  const navigate = useNavigate();
-
-  const handleSubmit = useCallback((event: React.FormEvent) => {
-    event.preventDefault();
-    navigate('/' + search?.toLocaleLowerCase().trim());
-  }, [search, navigate]);
   const toggleTheme = () => {
     setThemeName(themeName === 'light' ? 'dark' : 'light');
   };
   return (
     <Container>
-      <GithubLogo onClick={toggleTheme} />
-      <SearchForm onSubmit={handleSubmit}>
-        <input
-          placeholder="Enter Username or Repo..."
-          value={search}
-          onChange={event => setSearch(event.currentTarget.value)}
-        />
-      </SearchForm>
+      <SmallProfile />
+      <ChangeLanguage>
+        <ChangeLanguageIcon />
+        <p>Read this in Portuguese</p>
+      </ChangeLanguage>
+      {themeName === 'light'
+        ? (<Moon onClick={toggleTheme} />)
+        : (<Sun onClick={toggleTheme} />)}
     </Container>
   );
 }

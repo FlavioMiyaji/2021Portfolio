@@ -1,26 +1,22 @@
 import React, { useEffect, useState } from 'react';
 
 import ProfileData from '../../components/ProfileData';
-import RepoCard from '../../components/RepoCard';
-import RandomCalendar from '../../components/RandomCalendar';
 
-import { APIUser, APIRepo } from '../../@types';
+import { APIUser } from '../../@types';
 
 import {
   Container,
   Main,
   LeftSide,
   RightSide,
-  Repos,
-  CalendarHeading,
+  Introdution,
+  Card,
   Tab,
   RepoIcon,
 } from './styles';
-import { useParams } from 'react-router-dom';
 
 interface IProfileData {
   user?: APIUser;
-  repos?: APIRepo[];
   error?: string;
 }
 
@@ -29,39 +25,33 @@ const Profile: React.FC = () => {
   useEffect(() => {
     const loadProfile = async () => {
       const loadData = async () => {
-        const responses = await Promise.all([
-          fetch(`http://api.github.com/users/FlavioMiyaji`),
-          fetch(`http://api.github.com/users/FlavioMiyaji/repos`),
-        ]);
-        const [userResponse, reposResponse] = responses;
-        if (userResponse.status === 404) {
-          setData({ error: 'User not found!' });
-          return;
+        try {
+          const userResponse = await fetch(`http://api.github.com/users/FlavioMiyaji`);
+          if (userResponse.status === 404) {
+            setData({ error: 'User not found!' });
+            return;
+          }
+          const user: APIUser = await userResponse.json();
+          setData({ user });
+        } catch ({ message }) {
+          setData({ error: message });
         }
-        const user: APIUser = await userResponse.json();
-        const repos: APIRepo[] = await reposResponse.json();
-
-        const shuffledRepos = repos.sort(() => 0.5 - Math.random());
-        const sliceRepos = shuffledRepos.slice(0, 6);
-
-        setData({ user, repos: sliceRepos });
       };
       loadData();
     }
     loadProfile();
   }, []);
-  const { user, repos, error } = data;
+  const { user, error } = data;
   if (error) {
-    return <h1>{error}</h1>;
+    return <h3>{error}</h3>;
   }
-  if (!user || !repos) {
+  if (!user) {
     return <h1>Carregando...</h1>;
   }
   const TabContent = () => (
     <div className="content">
       <RepoIcon />
-      <span className="label">Repositories</span>
-      {!!repos && (<span className="number">{user.public_repos}</span>)}
+      <span className="label">Introdution</span>
     </div>
   );
   return (
@@ -69,7 +59,6 @@ const Profile: React.FC = () => {
       <Tab className="desktop">
         <div className="wrapper">
           <span className="offset" />
-          <TabContent />
         </div>
         <span className="line" />
       </Tab>
@@ -87,16 +76,79 @@ const Profile: React.FC = () => {
         </LeftSide>
         <RightSide>
           <Tab className="mobile">
-            <TabContent />
             <span className="line" />
           </Tab>
-          {!!repos && (
-            <Repos>
-              <h2>Random repos</h2>
-              <div>
-              </div>
-            </Repos>
-          )}
+          <Introdution>
+            <Tab>
+              <TabContent />
+            </Tab>
+            <Card>
+              <strong>Hello, how are you?</strong>
+              <p>Few things about me, my name is Flávio Yoshizo Miyaji, I have bachelor degree in Information systems by the University UNIARA. I'm recently working from home for the company SHX Informatica LTDA as a software engineer and currently living in Brazil.</p>
+            </Card>
+            <Card>
+              <strong>I’m currently working on Venda Assistida</strong>
+              <p>I've been working on this project for about two years, as a Full-stack developer where we use a Java REST API with Spring-boot for backend, PostgresSQL for database, and ReactNative for front-end mobile.</p>
+            </Card>
+            <Card>
+              <strong>I’m currently learning NodeJS, ReactJS, ReactNative and UI/UX Design</strong>
+              <p>I've been studying this stack since November 2019, since then, I created some projects, most of them it's public here in those repositories and a couple of them it's private for commercial purposes.</p>
+            </Card>
+          </Introdution>
+
+          <Introdution>
+            <Tab>
+              <TabContent />
+            </Tab>
+            <Card>
+              <strong>Hello, how are you?</strong>
+              <p>Few things about me, my name is Flávio Yoshizo Miyaji, I have bachelor degree in Information systems by the University UNIARA. I'm recently working from home for the company SHX Informatica LTDA as a software engineer and currently living in Brazil.</p>
+            </Card>
+            <Card>
+              <strong>I’m currently working on Venda Assistida</strong>
+              <p>I've been working on this project for about two years, as a Full-stack developer where we use a Java REST API with Spring-boot for backend, PostgresSQL for database, and ReactNative for front-end mobile.</p>
+            </Card>
+            <Card>
+              <strong>I’m currently learning NodeJS, ReactJS, ReactNative and UI/UX Design</strong>
+              <p>I've been studying this stack since November 2019, since then, I created some projects, most of them it's public here in those repositories and a couple of them it's private for commercial purposes.</p>
+            </Card>
+          </Introdution>
+
+          <Introdution>
+            <Tab>
+              <TabContent />
+            </Tab>
+            <Card>
+              <strong>Hello, how are you?</strong>
+              <p>Few things about me, my name is Flávio Yoshizo Miyaji, I have bachelor degree in Information systems by the University UNIARA. I'm recently working from home for the company SHX Informatica LTDA as a software engineer and currently living in Brazil.</p>
+            </Card>
+            <Card>
+              <strong>I’m currently working on Venda Assistida</strong>
+              <p>I've been working on this project for about two years, as a Full-stack developer where we use a Java REST API with Spring-boot for backend, PostgresSQL for database, and ReactNative for front-end mobile.</p>
+            </Card>
+            <Card>
+              <strong>I’m currently learning NodeJS, ReactJS, ReactNative and UI/UX Design</strong>
+              <p>I've been studying this stack since November 2019, since then, I created some projects, most of them it's public here in those repositories and a couple of them it's private for commercial purposes.</p>
+            </Card>
+          </Introdution>
+
+          <Introdution>
+            <Tab>
+              <TabContent />
+            </Tab>
+            <Card>
+              <strong>Hello, how are you?</strong>
+              <p>Few things about me, my name is Flávio Yoshizo Miyaji, I have bachelor degree in Information systems by the University UNIARA. I'm recently working from home for the company SHX Informatica LTDA as a software engineer and currently living in Brazil.</p>
+            </Card>
+            <Card>
+              <strong>I’m currently working on Venda Assistida</strong>
+              <p>I've been working on this project for about two years, as a Full-stack developer where we use a Java REST API with Spring-boot for backend, PostgresSQL for database, and ReactNative for front-end mobile.</p>
+            </Card>
+            <Card>
+              <strong>I’m currently learning NodeJS, ReactJS, ReactNative and UI/UX Design</strong>
+              <p>I've been studying this stack since November 2019, since then, I created some projects, most of them it's public here in those repositories and a couple of them it's private for commercial purposes.</p>
+            </Card>
+          </Introdution>
         </RightSide>
       </Main>
     </Container>

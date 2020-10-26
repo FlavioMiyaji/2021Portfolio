@@ -35,6 +35,25 @@ export const RightSide = styled.div`
   }
 `;
 
+export const Introdution = styled.div`
+  /* padding-bottom: 24px; */
+`;
+
+export const Card = styled.div`
+  border-radius: 10px;
+  background-color: var(--primary);
+  padding: 16px;
+  margin-bottom: 16px;
+  border: 1px solid var(--border);
+
+  > strong {
+    font-size: 24px;
+  }
+  > p {
+    margin-top: 8px;
+  }
+`;
+
 export const Repos = styled.div`
   margin-top: var(--verticalPadding);
   > h2 {

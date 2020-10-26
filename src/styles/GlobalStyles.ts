@@ -13,7 +13,7 @@ export default createGlobalStyle`
   body {
     min-height: 100%;
     #root {
-      height: 100vh;
+      min-height: 100vh;
       flex-direction: column;
       display: flex;
     }
@@ -37,5 +37,14 @@ export default createGlobalStyle`
       });
       return append;
     }}
+  }
+
+  @keyframes goup {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(-100vh) rotate(960deg);
+    }
   }
 `;

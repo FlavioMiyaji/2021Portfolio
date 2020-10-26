@@ -7,6 +7,7 @@ import { ThemeProvider } from 'styled-components';
 import GlobalStyles from './styles/GlobalStyles';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import Squares from './components/Squares';
 import Profile from './pages/Profile';
 
 import { ThemeName, themes } from './styles/themes';
@@ -17,6 +18,7 @@ function App() {
   return (
     <ThemeProvider theme={currentTheme}>
       <BrowserRouter>
+        <Squares themeName={themeName} />
         <Header themeName={themeName} setThemeName={setThemeName} />
         <Routes>
           <Route path='/' element={<Profile />} />
