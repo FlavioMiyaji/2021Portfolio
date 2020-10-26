@@ -4,21 +4,13 @@ import {
   Container,
   Flex,
   Avatar,
-  Column,
-  CompanyIcon,
-  LocationIcon,
-  EmailIcon,
-  BlogIcon,
 } from './styles';
 
 interface IProps {
   username: string;
   name: string;
   avatarUrl?: string;
-  company?: string;
-  location?: string;
-  email?: string;
-  blog?: string;
+  job: string;
 }
 
 function ProfileData(props: IProps) {
@@ -26,10 +18,7 @@ function ProfileData(props: IProps) {
     username,
     name,
     avatarUrl,
-    company,
-    location,
-    email,
-    blog,
+    job,
   } = props;
   let src = 'https://user-images.githubusercontent.com/334891/29999089-2837c968-9009-11e7-92c1-6a7540a594d5.png';
   if (avatarUrl) {
@@ -44,34 +33,9 @@ function ProfileData(props: IProps) {
         />
         <div>
           <h1>{name}</h1>
+          <h2>{job}</h2>
         </div>
       </Flex>
-      <Column>
-        {company && (
-          <li>
-            <CompanyIcon />
-            <span>{company}</span>
-          </li>
-        )}
-        {location && (
-          <li>
-            <LocationIcon />
-            <span>{location}</span>
-          </li>
-        )}
-        {email && (
-          <li>
-            <EmailIcon />
-            <span>{email}</span>
-          </li>
-        )}
-        {blog && (
-          <li>
-            <BlogIcon />
-            <span>{blog}</span>
-          </li>
-        )}
-      </Column>
     </Container>
   );
 }

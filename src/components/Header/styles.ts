@@ -32,6 +32,7 @@ export const ChangeLanguage = styled.div`
   > p {
     display: none;
     margin-left: 8px;
+    color: var(--logo);
     @media (min-width: 768px) {
       display: block;
     }
@@ -50,23 +51,5 @@ export const Sun = styled(BsSun)`
   cursor: pointer;
   &:hover{
     opacity: 0.8;
-  }
-`;
-
-export const SearchForm = styled.form`
-  padding-left: 16px;
-  width: 100%;
-  input {
-    background: var(--search);
-    outline: 0;
-    border-radius: 6px;
-    padding: 7px 12px;
-    width: 100%;
-
-    &:focus {
-      width: 318px
-    }
-
-    transition: width .2s ease-out, color .2s ease-out;
   }
 `;

@@ -1,5 +1,3 @@
-import 'react-calendar-heatmap/dist/styles.css';
-
 import React, { useState } from 'react';
 import { Route, Routes, BrowserRouter } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
