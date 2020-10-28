@@ -10,6 +10,14 @@ export default createGlobalStyle`
     min-height: 100%;
     background: var(--primary);
   }
+  html::-webkit-scrollbar {
+    background: var(--primary);
+  }
+  html::-webkit-scrollbar-thumb {
+    background: var(--header);
+    border-radius: 3px;
+    box-shadow: inset 2px 2px 2px hsla(0, 0%, 100%, .25), inset -2px -2px 2px rgba(0, 0, 0, .25);
+  }
   body {
     min-height: 100%;
     #root {

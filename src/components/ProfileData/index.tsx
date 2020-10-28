@@ -4,6 +4,8 @@ import {
   Container,
   Flex,
   Avatar,
+  Column,
+  LocationIcon,
 } from './styles';
 
 interface IProps {
@@ -11,6 +13,7 @@ interface IProps {
   name: string;
   avatarUrl?: string;
   job: string;
+  location: string;
 }
 
 function ProfileData(props: IProps) {
@@ -19,6 +22,7 @@ function ProfileData(props: IProps) {
     name,
     avatarUrl,
     job,
+    location,
   } = props;
   let src = 'https://user-images.githubusercontent.com/334891/29999089-2837c968-9009-11e7-92c1-6a7540a594d5.png';
   if (avatarUrl) {
@@ -36,6 +40,14 @@ function ProfileData(props: IProps) {
           <h2>{job}</h2>
         </div>
       </Flex>
+      <Column>
+        {location && (
+          <li>
+            <LocationIcon />
+            <span>{location}</span>
+          </li>
+        )}
+      </Column>
     </Container>
   );
 }

@@ -1,13 +1,11 @@
 import React from 'react';
 
-import {
-  Container,
-} from './styles';
+import Section from '../../../components/Section'
 
-function Skills() {
+const Skills: React.FC = () => {
   return (
-    <Container>
-    </Container>
+    <Section title="Skills">
+    </Section>
   );
 }
 

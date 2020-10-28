@@ -82,8 +82,6 @@ export const Column = styled.ul`
     display: flex;
     align-items: center;
     font-size: 14px;
-  }
-  li + li {
     margin-top: 10px;
   }
   span {

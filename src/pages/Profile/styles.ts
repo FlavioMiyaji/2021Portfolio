@@ -4,6 +4,7 @@ export const Container = styled.div`
   --horizontalPadding: 16px;
   --verticalPadding: 24px;
 
+  margin-top: 60px;
   padding: var(--verticalPadding) var(--horizontalPadding);
   overflow: hidden;
   flex: 1;

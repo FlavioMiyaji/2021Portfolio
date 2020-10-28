@@ -1,13 +1,11 @@
 import React from 'react';
 
-import {
-  Container,
-} from './styles';
+import Section from '../../../components/Section'
 
-function Highlights() {
+const Highlights: React.FC = () => {
   return (
-    <Container>
-    </Container>
+    <Section title="Highlights">
+    </Section>
   );
 }
 

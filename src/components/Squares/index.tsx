@@ -21,7 +21,7 @@ const Squares: React.FC<IProps> = ({ themeName }) => {
   const random = (min: number, max: number) => (Math.random() * (max - min) + min);
 
   const squares: ISquare[] = [];
-  for (let i = 0; i < 10; i++) {
+  for (let i = 0; i < 20; i++) {
     squares.push({
       size: Math.floor(random(10, 120)),
       position: random(1, 99),

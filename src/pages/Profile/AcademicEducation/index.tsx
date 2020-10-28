@@ -1,13 +1,13 @@
 import React from 'react';
 
-import {
-  Container,
-} from './styles';
+import Section from '../../../components/Section'
 
-function AcademicEducation() {
+const AcademicEducation: React.FC = () => {
   return (
-    <Container>
-    </Container>
+    <Section title="Academic education">
+      <h1>Information systems</h1>
+      <p>I have bachelor degree in Information systems by the University UNIARA.</p>
+    </Section>
   );
 }
 

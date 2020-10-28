@@ -1,12 +1,18 @@
 import styled, { css } from 'styled-components';
-import { BsFillChatFill, BsMoon, BsSun } from 'react-icons/bs';
+import { BsFillChatFill } from 'react-icons/bs';
+import { FiMoon, FiSun } from 'react-icons/fi';
 
 export const Container = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
   background: var(--header);
   padding: 11px 16px;
+  z-index: 10;
 `;
 
 export const SmallProfile = styled.div`
@@ -18,6 +24,7 @@ const iconCSS = css`
   width: 32px;
   height: 32px;
   flex-shrink: 0;
+  margin: 0 8px;
   cursor: pointer;
   &:hover{
     opacity: 0.8;
@@ -39,17 +46,6 @@ export const ChangeLanguage = styled.div`
   }
 `;
 
-export const Moon = styled(BsMoon)`
-  ${iconCSS}
-`;
+export const Moon = styled(FiMoon)`${iconCSS}`;
 
-export const Sun = styled(BsSun)`
-  fill: var(--logo);
-  width: 32px;
-  height: 32px;
-  flex-shrink: 0;
-  cursor: pointer;
-  &:hover{
-    opacity: 0.8;
-  }
-`;
+export const Sun = styled(FiSun)`${iconCSS}`;
