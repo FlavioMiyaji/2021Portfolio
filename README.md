@@ -1,6 +1,26 @@
 # Portfolio 2021
 A Web site portfolio to show some of my experiences and skills.
 
+- [x]  [UI Clone of GitHub](https://www.youtube.com/watch?v=iLEbGQXsg3k)
+    - [ ]  Add video on the README
+- [x]  [Use CSS Animation for the background](https://www.youtube.com/watch?v=GykTLqODQuU)
+    - [ ]  Add video on the README
+- [x]  Create the Portfolio project
+    - [x]  Use the GitHub Clone
+    - [x]  Use the CSS Animation
+    - [ ]  Add i18n to 'en' and 'pt-BR'
+    - [x]  Add Theme 'dark'
+    - [ ]  Add Tabs
+        - [ ]  Introduction
+        - [ ]  Studies
+        - [ ]  Jobs
+        - [ ]  AcademicEducation
+        - [ ]  Skills
+        - [ ]  Progress
+        - [ ]  Highlights
+        - [ ]  Contacts
+    - [ ]  [Add Reading percentage scroll bar](https://www.youtube.com/watch?v=wHzpWi3FxI8&t=628s)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
