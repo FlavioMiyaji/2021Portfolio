@@ -11,12 +11,12 @@ A Web site portfolio to show some of my experiences and skills.
     - [ ]  Add i18n to 'en' and 'pt-BR'
     - [x]  Add Theme 'dark'
     - [ ]  Add Tabs
-        - [ ]  Introduction
-        - [ ]  Studies
+        - [x]  Introduction
+        - [x]  Studies
         - [ ]  Jobs
-        - [ ]  AcademicEducation
+        - [x]  AcademicEducation
         - [ ]  Skills
-        - [ ]  Progress
+        - [x]  Progress
         - [ ]  Highlights
         - [ ]  Contacts
     - [ ]  [Add Reading percentage scroll bar](https://www.youtube.com/watch?v=wHzpWi3FxI8&t=628s)
