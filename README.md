@@ -20,6 +20,7 @@ A Web site portfolio to show some of my experiences and skills.
         - [ ]  Highlights
         - [ ]  Contacts
     - [ ]  [Add Reading percentage scroll bar](https://www.youtube.com/watch?v=wHzpWi3FxI8&t=628s)
+        - [ ] Add video on the README
 
 # Getting Started with Create React App
 
