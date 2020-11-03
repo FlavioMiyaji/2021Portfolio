@@ -11,16 +11,15 @@ A Web site portfolio to show some of my experiences and skills.
     - [ ]  Add i18n to 'en' and 'pt-BR'
     - [x]  Add Theme 'dark'
     - [ ]  Add Tabs
-        - [x]  Introduction
-        - [x]  Studies
+        - [ ]  Introduction
+        - [ ]  Studies
         - [ ]  Jobs
-        - [x]  AcademicEducation
+        - [ ]  Academic education
         - [ ]  Skills
-        - [x]  Progress
+        - [ ]  Progress
         - [ ]  Highlights
         - [ ]  Contacts
     - [ ]  [Add Reading percentage scroll bar](https://www.youtube.com/watch?v=wHzpWi3FxI8&t=628s)
-        - [ ] Add video on the README
 
 # Getting Started with Create React App
 
