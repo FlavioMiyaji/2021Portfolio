@@ -2,7 +2,7 @@ import React from 'react';
 
 import Section from '../../../components/Section'
 
-const Studies: React.FC = () => {
+const Studies: React.FC = (): JSX.Element => {
   return (
     <Section title="Studies">
       <h1>I’m currently learning NodeJS, ReactJS, ReactNative and UI/UX Design</h1>

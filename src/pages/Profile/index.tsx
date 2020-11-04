@@ -26,7 +26,7 @@ interface IProfileData {
   error?: string;
 }
 
-const Profile: React.FC = () => {
+const Profile: React.FC = (): JSX.Element => {
   const [data, setData] = useState<IProfileData>({} as IProfileData);
   useEffect(() => {
     const loadProfile = async () => {

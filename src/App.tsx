@@ -10,7 +10,7 @@ import Profile from './pages/Profile';
 
 import { ThemeName, themes } from './styles/themes';
 
-function App() {
+function App(): JSX.Element {
   const [themeName, setThemeName] = useState<ThemeName>('dark');
   const currentTheme = themes[themeName];
   return (

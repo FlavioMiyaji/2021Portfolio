@@ -34,8 +34,9 @@ const Squares: React.FC<IProps> = ({ themeName }) => {
 
   return (
     <Container>
-      {squares.map(square => (
+      {squares.map((square, index) => (
         <Square
+          key={index}
           size={square.size}
           position={square.position}
           delay={square.delay}

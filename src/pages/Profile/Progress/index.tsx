@@ -17,7 +17,7 @@ interface IProgress {
   proficiency: number;
 }
 
-const Progress: React.FC = () => {
+const Progress: React.FC = (): JSX.Element => {
   const progress: IProgress[] = [
     { title: "Java", experience: 10, proficiency: 1 },
     { title: "NodeJS", experience: 1, proficiency: .4 },
@@ -40,7 +40,9 @@ const Progress: React.FC = () => {
       {progress.map(({ title, experience, proficiency }) => {
         let color = languageColor.find(language => language.language.toLowerCase() === title.toLowerCase());
         return (
-          <ProgressItem>
+          <ProgressItem
+            key={title}
+          >
             <Title>{title}</Title>
             <ExperienceProgress
               value={experience}
