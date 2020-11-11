@@ -1,7 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, {
+  useState,
+  useEffect,
+  useCallback,
+} from 'react';
 
 import { ThemeName } from '../../styles/themes';
-import useWindowDimensions from '../../hooks/WindowDimensions';
 
 import {
   Container,
@@ -20,22 +23,21 @@ interface IProps {
 }
 
 const Header: React.FC<IProps> = ({ themeName, setThemeName }) => {
-  const toggleTheme = () => {
+  const toggleTheme = (): void => {
     setThemeName(themeName === 'light' ? 'dark' : 'light');
   };
-
-  const { height } = useWindowDimensions();
   const [offset, setOffset] = useState<number>(0);
-  useEffect(() => {
+  useEffect((): void => {
     window.onscroll = () => setOffset(window.pageYOffset)
   }, []);
-  const calcBar = (): string => {
-    try {
-      return `${Math.floor(offset * 100 / height)}%`;
-    } catch (err) {
-      return '0px';
+  const calcBar = useCallback((): string => {
+    const height = document.body?.clientHeight - window.innerHeight;
+    if (height) {
+      const percent = Math.floor(offset * 100 / height);
+      return `${percent}%`;
     }
-  };
+    return '0px';
+  }, [offset]);
   return (
     <Container>
       <SmallProfile />
