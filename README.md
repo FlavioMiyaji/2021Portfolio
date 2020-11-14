@@ -12,6 +12,7 @@ A Web site portfolio to show some of my experiences and skills.
     - [x]  Add Theme 'dark'
     - [ ]  Add Tabs
         - [ ]  Introduction
+            - [ ]  Correção no texto
         - [ ]  Studies
         - [ ]  Jobs
         - [ ]  Academic education
